@@ -1,7 +1,7 @@
 -- Details of content in this file: 
 /*
 1. Applying `where` clause to filter the row
-		1.1. When filter condition is case-insensitive
+	1.1. When filter condition is case-insensitive
         1.2. When filter condition is case-sensitive: Using `binary` keyword
 2. Alias keyword
 3. Update statement
@@ -37,7 +37,7 @@
     
 -- Inserting 3 records into Employee table
 > INSERT INTO Employee (id, firstname, lastname, age, salary) VALUES
-	(1, 'Ross', 'Geller', 24, 10000),
+    (1, 'Ross', 'Geller', 24, 10000),
     (2, 'Phoebe', 'Buffet', 26, 20000),
     (3, 'Jennifer', 'Aniston', 32, 30000);
     
@@ -55,6 +55,7 @@
 +----+-----------+------------+----------+-----+--------+------------+
 2 rows in set (0.00 sec)
 
+
 -- 1.1. When filter condition is case-insensitive
 > SELECT * FROM Employee where firstname = 'ross';
 +----+-----------+------------+----------+-----+--------+------------+
@@ -71,6 +72,7 @@ is fetched where name starts with capital letter.
 NOTE: Thus, by default "where clause is case-insensitive".
 
 To make it case-sensitive we will make use of 'binary' keyword as shown in next case */
+
 
 -- 1.2. When filter condition is case-sensitive:
 > SELECT * FROM Employee where binary firstname = 'ross';
@@ -128,6 +130,7 @@ Rows matched: 1  Changed: 1  Warnings: 0
 
 /* NOTE: If no "where" clause is put, then update would happen for the whole table */
 
+
 -- 3.2. Updating fro the whole table
 
 -- Changing all location to London
@@ -144,6 +147,7 @@ Query OK, 3 rows affected (0.01 sec)
 |  3 | Jennifer  | NULL       | Aniston  |  32 |  30000 | London   |
 +----+-----------+------------+----------+-----+--------+----------+
 3 rows in set (0.00 sec)
+
 
 -- 3.3. Updating a value of a column by adding some value to that column
 > UPDATE Employee SET salary = salary + 100 where firstname = 'Phoebe' and age = 26;
@@ -167,6 +171,7 @@ Rows matched: 1  Changed: 1  Warnings: 0
 
 -- 4.1. To delete all records from a table
 > DELETE from Employee;
+
 
 -- 4.2. To delete a specified record from a table
 > DELETE from Employee where id = 2;
